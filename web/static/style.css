@@ -1,0 +1,260 @@
+:root {
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-display: "Outfit", var(--font-body);
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.12);
+  --text: #f8fafc;
+  --text-muted: #cbd5e1;
+  --accent: #22c55e;
+  --accent-2: #eab308;
+  --felt: #14532d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: linear-gradient(165deg, #052e16 0%, #1e293b 50%, #422006 100%);
+  background-attachment: fixed;
+}
+
+.bg-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-blob-a {
+  width: 280px;
+  height: 280px;
+  background: var(--accent);
+  top: -40px;
+  right: -20px;
+}
+
+.bg-blob-b {
+  width: 260px;
+  height: 260px;
+  background: var(--accent-2);
+  bottom: -30px;
+  left: -20px;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.page-help {
+  max-width: 40rem;
+}
+
+.page-nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.75rem;
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #bbf7d0;
+  text-decoration: none;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(34, 197, 94, 0.45);
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.hero-badge {
+  font-size: 2rem;
+  margin-bottom: 0.35rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  margin: 0 0 0.35rem;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+  backdrop-filter: blur(8px);
+  margin-bottom: 0.85rem;
+}
+
+.money-line,
+.bet-line {
+  margin: 0 0 0.35rem;
+}
+
+.status-text {
+  margin: 0.5rem 0 0;
+  font-weight: 600;
+  min-height: 1.25rem;
+}
+
+.status-text.is-win {
+  color: #86efac;
+}
+
+.status-text.is-lose {
+  color: #fca5a5;
+}
+
+.error {
+  margin: 0.5rem 0 0;
+  color: #fca5a5;
+  font-size: 0.9rem;
+}
+
+.table {
+  background: rgba(20, 83, 45, 0.55);
+  border-color: rgba(34, 197, 94, 0.25);
+}
+
+.hand-block + .hand-block {
+  margin-top: 1rem;
+}
+
+.hand-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.hand-total {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.playing-card {
+  width: 3.1rem;
+  height: 4.25rem;
+  border-radius: 0.45rem;
+  background: #fff;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.playing-card.is-red {
+  color: #b91c1c;
+}
+
+.playing-card.is-back {
+  background: linear-gradient(135deg, #1e3a8a, #312e81);
+  border-color: #6366f1;
+}
+
+.playing-card .rank {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.playing-card .suit {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.bet-row,
+.action-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+input[type="number"] {
+  flex: 1;
+  min-width: 5rem;
+  font: inherit;
+  padding: 0.45rem 0.55rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(15, 23, 42, 0.5);
+  color: var(--text);
+}
+
+.btn {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 0.55rem;
+  padding: 0.45rem 0.85rem;
+  font-weight: 600;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #052e16;
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+}
+
+.double-panel {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.help h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.help p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.help + .help {
+  margin-top: 0.75rem;
+}
